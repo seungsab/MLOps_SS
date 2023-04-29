@@ -1,7 +1,7 @@
 ## Trouble shooting
 - OS Environment: Ubuntu 20.04
 
-#### **1. Cannot connect to the Docker at unix**
+#### **1. [Running Issues] "Cannot connect to the Docker at unix"**
 ```bash
 seungsab@DESKTOP-9CD5Q7P:~$ docker images
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
