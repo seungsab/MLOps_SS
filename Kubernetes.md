@@ -73,4 +73,56 @@ Basic Commands (Beginner):
 Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 ```
+
+## **3. Let's start Minikube**  
+Let's start with docker-driver for running Minikube, type as:
+```bash
+minikube start --driver=docker
+```
+Then, check status of minikube and kubectrl as:
+```bash
+minikube status
+```
+```bash
+kubectl version
+```
+
+If you are successful to install, you can get the messages as:
+```bash
+seungsab@seungsab:~$ minikube start --driver=docker
+😄  minikube v1.30.1 on Ubuntu 20.04
+✨  Using the docker driver based on user configuration
+📌  Using Docker driver with root privileges
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+💾  Downloading Kubernetes v1.26.3 preload ...
+    > preloaded-images-k8s-v18-v1...:  397.02 MiB / 397.02 MiB  100.00% 51.81 M
+    > gcr.io/k8s-minikube/kicbase...:  373.53 MiB / 373.53 MiB  100.00% 18.21 M
+🔥  Creating docker container (CPUs=2, Memory=12800MB) ...
+🐳  Preparing Kubernetes v1.26.3 on Docker 23.0.2 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+seungsab@seungsab:~$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+seungsab@seungsab:~$ kubectl version
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.1", GitCommit:"4c9411232e10168d7b050c49a1b59f6df9d7ea4b", GitTreeState:"clean", BuildDate:"2023-04-14T13:21:19Z", GoVersion:"go1.20.3", Compiler:"gc", Platform:"linux/amd64"}
+Kustomize Version: v5.0.1
+Server Version: version.Info{Major:"1", Minor:"26", GitVersion:"v1.26.3", GitCommit:"9e644106593f3f4aa98f8a84b23db5fa378900bd", GitTreeState:"clean", BuildDate:"2023-03-15T13:33:12Z", GoVersion:"go1.19.7", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+
 ## Trouble shooting
