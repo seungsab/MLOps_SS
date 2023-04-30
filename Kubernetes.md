@@ -75,19 +75,12 @@ Use "kubectl options" for a list of global command-line options (applies to all 
 ```
 
 ## **3. Let's start Minikube**  
-Let's start with docker-driver for running Minikube, type as:
+1) Let's start with docker-driver for running Minikube, type as:
 ```bash
 minikube start --driver=docker
 ```
-Then, check status of minikube and kubectrl as:
-```bash
-minikube status
-```
-```bash
-kubectl version
-```
 
-If you are successful to install, you can get the messages as:
+If you are successful, you can get the messages as:
 ```bash
 seungsab@seungsab:~$ minikube start --driver=docker
 😄  minikube v1.30.1 on Ubuntu 20.04
@@ -108,7 +101,20 @@ seungsab@seungsab:~$ minikube start --driver=docker
 🔎  Verifying Kubernetes components...
 🌟  Enabled addons: default-storageclass, storage-provisioner
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+```
 
+2) Then, check status of minikube and kubectrl as:
+```bash
+minikube status
+```
+```bash
+kubectl version
+```
+```bash
+kubectl get pod -n kube-system
+```
+
+```bash
 seungsab@seungsab:~$ minikube status
 minikube
 type: Control Plane
@@ -122,6 +128,16 @@ WARNING: This version information is deprecated and will be replaced with the ou
 Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.1", GitCommit:"4c9411232e10168d7b050c49a1b59f6df9d7ea4b", GitTreeState:"clean", BuildDate:"2023-04-14T13:21:19Z", GoVersion:"go1.20.3", Compiler:"gc", Platform:"linux/amd64"}
 Kustomize Version: v5.0.1
 Server Version: version.Info{Major:"1", Minor:"26", GitVersion:"v1.26.3", GitCommit:"9e644106593f3f4aa98f8a84b23db5fa378900bd", GitTreeState:"clean", BuildDate:"2023-03-15T13:33:12Z", GoVersion:"go1.19.7", Compiler:"gc", Platform:"linux/amd64"}
+
+seungsab@seungsab:~$ kubectl get pod -n kube-system
+NAME                               READY   STATUS    RESTARTS      AGE
+coredns-787d4945fb-zh5cv           1/1     Running   0             23m
+etcd-minikube                      1/1     Running   0             23m
+kube-apiserver-minikube            1/1     Running   0             23m
+kube-controller-manager-minikube   1/1     Running   0             23m
+kube-proxy-zvntv                   1/1     Running   0             23m
+kube-scheduler-minikube            1/1     Running   0             23m
+storage-provisioner                1/1     Running   1 (22m ago)   23m
 ```
 
 
