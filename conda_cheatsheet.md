@@ -8,12 +8,12 @@ conda create -n [name of VE] python=3.6
 source activate [name of VE]
 ```
 
-## **Export dependencies of VE using yaml-file**
+## **Export dependencies of VE using yml-file**
 ```bash
-conda env export --no-builds > environment.yaml
+conda env export --no-builds > environment.yml
 ```
 
-## **Create VE using yaml-file**
+## **Create VE using yml-file**
 ```bash
-conda env create -f environment.yaml
+conda env create -f environment.yml
 ```
