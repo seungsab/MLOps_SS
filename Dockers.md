@@ -2,20 +2,20 @@
 - OS: Ubuntu 20.04
 
 ## 1. Installation
-**1) Update package manager using apt**
+### 1) Update package manager using apt
 ```bash
 sudo apt-get update
 ```
-**2) Install pre-requisite package for Docker**
+### 2) Install pre-requisite package for Docker
 ```bash
 sudo apt-get install apt-transport-https ca-certificates \
 curl gnupg lsb-release
 ```
-**3) Add GPG key of Docker**
+### 3) Add GPG key of Docker
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
-**4) Set it to link the stable repository**
+### 4) Set it to link the stable repository
 ```bash
 echo \
 "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] http
@@ -23,12 +23,12 @@ s://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /de
 v/null
 ```
-**5) Install Docker Engine**
+### 5) Install Docker Engine
 ```bash
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
-**6) Check Docker Installation using hello-world**
+### 6) Check Docker Installation using hello-world
 ```bash
 sudo docker run hello-world
 ```
@@ -57,14 +57,14 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
-**7) Set Permission of Docker in Linux**
+###  7) Set Permission of Docker in Linux
 ```bash
 sudo usermod -a -G docker $USER
 sudo service docker restart
 ```
 
 ## 2. Basic Commands of Docker
-**1) Docker pull**
+### 1) Docker pull
 - Get(download) docker image from Docker image repository.
 ```bash
 docker pull ubuntu:20.04
@@ -78,7 +78,7 @@ Digest: sha256:db8bf6f4fb351aa7a26e27ba2686cf35a6a409f65603e59d4c203e58387dc6b3
 Status: Downloaded newer image for ubuntu:20.04
 docker.io/library/ubuntu:20.04
 ```
-**2) Docker images**
+### 2) Docker images
 - Print a list of docker images in the local.
 ```bash
 docker images
@@ -95,7 +95,7 @@ registry                      latest    8db46f9d7550   8 weeks ago     24.2MB
 busybox                       latest    7cfbbec8963d   2 months ago    4.86MB
 hello-world                   latest    feb5d9fea6a5   20 months ago   13.3kB
 ```
-**3) Docker images**
+### 3) Docker images
 - Print a list of docker images that are working in the local.
 ```bash
 docker ps
@@ -116,15 +116,15 @@ CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                 
 fda4a142a7e5   hello-world   "/hello"   17 minutes ago   Exited (0) 17 minutes ago             compassionate_lehmann
 ```
 
-**4) Docker run**
+### 4) Docker run
 - Run Docker container
 ```bash
 docker run -it --name demo1 ubuntu:20.04 /bin/bash
 ```
-- `it`: `-i` option (interative) + `-t` option (terminal)
-- `--name`: Define name to use it instead of container ID
-- `/bin/bash`: Run a command simultaneously as a container runs (herein, `/ban/bash` => bash terminal)
-- `-d`: After disconnecting a docker container, the docker container still run in the background
+####  - `it`: `-i` option (interative) + `-t` option (terminal)
+#### `--name`: Define name to use it instead of container ID
+#### `/bin/bash`: Run a command simultaneously as a container runs (herein, `/ban/bash` => bash terminal)
+#### `-d`: After disconnecting a docker container, the docker container still run in the background
 > Output
 ```bash
 seungsab@DESKTOP-9CD5Q7P:~$ docker run -it --name demo1 ubuntu:20.04 /bin/bash
@@ -132,7 +132,7 @@ root@2830de517777:/# ls
 bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-**5) Docker exec**
+### 5) Docker exec
 - Make a command in a docker container or get access to a docker container 
 - First, run a docker container in the background.
 ```bash
@@ -155,7 +155,7 @@ root@14296930eaba:/# ls
 bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-**6) Docker logs**
+### 6) Docker logs
 - Print a log of a docker container
 - At first, run the following container
 ```bash
@@ -177,7 +177,7 @@ Fri May 26 08:00:09 UTC 2023
 Fri May 26 08:00:10 UTC 2023
 ```
 
-**7) Docker stop**
+### 7) Docker stop
 - Stop a docker container in running
 - To stop a container, run a docker container first
 ```bash
@@ -203,7 +203,7 @@ seungsab@DESKTOP-9CD5Q7P:~$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
-**8) Docker rm**
+### 8) Docker rm
 - Remove a docker container (To do this, you should first stop a docker container)
 - To remove a container, run a docker container first
 ```bash
@@ -235,7 +235,7 @@ seungsab@DESKTOP-9CD5Q7P:~$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
-**9) Docker rmi**
+### 9) Docker rmi
 - Remove an image of a docker container
 ```bash
 docker images
@@ -265,6 +265,52 @@ registry                      latest    8db46f9d7550   8 weeks ago     24.2MB
 busybox                       latest    7cfbbec8963d   2 months ago    4.86MB
 hello-world                   latest    feb5d9fea6a5   20 months ago   13.3kB
 ```
+
+
+## 3. Dockerfile
+### 1) Create Dockerfile
+- Make "Dockerfile"
+```bash
+cd ~
+mkdir docker-exercise
+cd docker-exercise
+touch Dockerfile
+```
+> Output
+```bash
+seungsab@DESKTOP-9CD5Q7P:~/docker-exercise$ ls
+Dockerfile
+```
+
+### 2) Basic commands in Dockerfile
+#### - FROM
+- Define base image
+```
+FROM <image>:<tag>
+
+# Example
+FROM ubuntu:20.04
+```
+
+#### - COPY
+- Copy `files or directories in a source` to path in a target 
+```
+COPY <source> ... <target>
+COPY environment.yml /install/environment.yml
+COPY /data /database
+```
+#### - RUN
+
+#### - CMD
+
+
+#### - WORKDIR
+
+
+#### - ENV
+
+
+#### - EXPOSE
 
 
 ## Trouble shooting
