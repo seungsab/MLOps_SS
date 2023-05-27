@@ -296,22 +296,55 @@ FROM ubuntu:20.04
 - Copy `files or directories in a source` to path in a target 
 ```
 COPY <source> ... <target>
+
+# Example
 COPY environment.yml /install/environment.yml
 COPY /data /database
 ```
 #### - RUN
+- Run commands in a docker container
+```
+RUN <command>
+
+# Example
+RUN conda env create -f environment.yml
+```
 
 #### - CMD
+- Run commands when a docker container starts
+```
+CMD <command>
 
+# Example
+CMD python test.py
+```
 
 #### - WORKDIR
+- Set a working directory. If there is no directory, It makes a new folder
+```
+WORKDIR <path>
 
+# Example
+WORKDIR /home/ss
+```
 
 #### - ENV
+- Set environment variables in a docker container
+```
+ENV <key> <value>
 
+# Example
+ENV LANGUAGE ko_KR.UTF-8
+```
 
 #### - EXPOSE
+- Set port and protocols for a docker container
+```
+EXPOSE <port>
 
+# Example
+EXPOSE 7777
+```
 
 ## Trouble shooting
 - OS Environment: Ubuntu 20.04
