@@ -40,3 +40,22 @@ git --version
 seungsab@DESKTOP-ALEHVET:~$ git --version
 git version 2.25.1
 ```
+
+### 3) Configure Git
+- Set username and E-mail
+```bash
+git config --global user.name "seungsab"
+git config --global user.email "seungsab@gmail.com"
+```
+- Check modification of git config.
+```bash
+git config --list
+```
+> Output
+```bash
+seungsab@DESKTOP-ALEHVET:~$ git config --global user.name "seungsab"
+seungsab@DESKTOP-ALEHVET:~$ git config --global user.email "seungsab@gmail.com"
+seungsab@DESKTOP-ALEHVET:~$ git config --list
+user.name=seungsab
+user.email=seungsab@gmail.com
+```
