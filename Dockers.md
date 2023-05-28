@@ -8,8 +8,12 @@ sudo apt-get update
 ```
 ### 2) Install pre-requisite package for Docker
 ```bash
-sudo apt-get install apt-transport-https ca-certificates \
-curl gnupg lsb-release
+sudo apt-get install \
+apt-transport-https \
+ca-certificates \
+curl \
+gnupg \
+lsb-release
 ```
 ### 3) Add GPG key of Docker
 ```bash
