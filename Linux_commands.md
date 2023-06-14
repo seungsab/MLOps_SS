@@ -164,10 +164,31 @@ drwxr-xr-x  2 seungsab seungsab  4096 Jun 14 10:17 test
 -rw-r--r--  1 seungsab seungsab     0 Jun 14 10:22 test3.txt
 ```
 
-## **10. `grep`: Command to Search for a string within an output**
+## **12. `grep`: Command to search for a string within an output**
 ```bash
 (base) seungsab@SSWORKSTATION:~$ cat test.txt
 This is work~!
 (base) seungsab@SSWORKSTATION:~$ cat test.txt | grep 'This'
 This is work~!
+```
+
+## **12. `df`: Command to display disk filesystem information**
+```bash
+(base) seungsab@SSWORKSTATION:~$ df
+Filesystem      1K-blocks       Used Available Use% Mounted on
+/dev/sdd        263174212    9063032 240673024   4% /
+tmpfs            26201548          0  26201548   0% /mnt/wsl
+/dev/sdc        263174212    1168776 248567280   1% /mnt/wsl/docker-desktop-data/isocache
+none             26201548         16  26201532   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/sdb        263174212     123624 249612432   1% /mnt/wsl/docker-desktop/docker-desktop-user-distro
+/dev/loop0         371152     371152         0 100% /mnt/wsl/docker-desktop/cli-tools
+tools           498916956  342114996 156801960  69% /init
+none             26199464          0  26199464   0% /dev
+none             26201548          8  26201540   1% /run
+none             26201548          0  26201548   0% /run/lock
+none             26201548          0  26201548   0% /run/shm
+none             26201548          0  26201548   0% /run/user
+tmpfs            26201548          0  26201548   0% /sys/fs/cgroup
+C:\             498916956  342114996 156801960  69% /mnt/c
+D:\            3907000316 3007936080 899064236  77% /mnt/d
 ```
