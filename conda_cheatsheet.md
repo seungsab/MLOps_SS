@@ -17,3 +17,13 @@ conda env export --no-builds > environment.yml
 ```bash
 conda env create -f environment.yml
 ```
+
+## **Print list of VE**
+```bash
+conda env list
+```
+
+## **Remove VE**
+```bash
+conda env remove -n [name of VE]
+```
