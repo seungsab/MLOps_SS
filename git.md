@@ -59,3 +59,28 @@ seungsab@DESKTOP-ALEHVET:~$ git config --list
 user.name=seungsab
 user.email=seungsab@gmail.com
 ```
+
+## 2. Commands
+### 1) git init
+- git init command creates a new Git repository
+```bash
+git init
+```
+> Output
+```bash
+user@SSWORKSTATION MINGW64 ~/Desktop/test (master)
+$ git init
+Initialized empty Git repository in C:/Users/user/Desktop/test/.git/
+```
+
+### 2) git remote
+- add a new remote repository
+```bash
+git remote add origin {REMOTE_URL}
+```
+> Output
+```bash
+user@SSWORKSTATION MINGW64 ~/Desktop/SJU_Interview (master)
+$ git remote add origin https://github.com/seungsab/test.git
+(base)
+```
