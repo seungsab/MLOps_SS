@@ -80,7 +80,7 @@ git remote add origin {REMOTE_URL}
 ```
 > Output
 ```bash
-user@SSWORKSTATION MINGW64 ~/Desktop/SJU_Interview (master)
+user@SSWORKSTATION MINGW64 ~/Desktop/test (master)
 $ git remote add origin https://github.com/seungsab/test.git
 (base)
 ```
