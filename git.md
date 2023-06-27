@@ -84,3 +84,43 @@ user@SSWORKSTATION MINGW64 ~/Desktop/test (master)
 $ git remote add origin https://github.com/seungsab/test.git
 (base)
 ```
+
+
+## 3. Trouble shooting
+### 1) merge  error when pulling git (git pull)
+- error: Your local changes to the following files would be overwritten by merge
+> Output
+```bash
+user@SSWORKSTATION MINGW64 ~/Desktop/Useful_tutorials (main)
+$ git pull
+remote: Enumerating objects: 270, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 270 (delta 11), reused 21 (delta 11), pack-reused 248
+Receiving objects: 100% (270/270), 66.55 MiB | 5.03 MiB/s, done.
+Resolving deltas: 100% (53/53), completed with 3 local objects.
+From https://github.com/seungsab/Useful_tutorials
+   ea26c98..4855844  main       -> origin/main
+error: Your local changes to the following files would be overwritten by merge:
+        Create_image_as_base64.ipynb
+Please commit your changes or stash them before you merge.
+Aborting
+Updating ea26c98..4855844
+```
+> **Solution**
+```diff 
+-Git stash
+```
+```bash
+git stash
+```
+> Output
+```
+user@SSWORKSTATION MINGW64 ~/Desktop/Useful_tutorials (main)
+$ git stash
+warning: in the working copy of 'Create_image_as_base64.ipynb', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on main: ea26c98 categorical tuto added
+```
+
+## Appendix
+[Writing Github README](https://medium.com/analytics-vidhya/writing-github-readme-e593f278a796)
