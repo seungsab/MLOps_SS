@@ -67,12 +67,14 @@ test1.txt
 ```
 
 ## **7. `cp`: Command to copy files in Linux**
+- `-R`: Copy all files in the subdirectories
 ```bash
 (base) seungsab@SSWORKSTATION:~$ ls
 anaconda3  test  test.txt
 (base) seungsab@SSWORKSTATION:~$ cp test.txt test1.txt
 (base) seungsab@SSWORKSTATION:~$ ls
 anaconda3  test  test.txt  test1.txt
+(base) seungsab@SSWORKSTATION:~$ cp -R <Source directory> <Destination>
 ```
 
 ## **8. `rm`: Command to delete files or directories**
