@@ -85,8 +85,41 @@ $ git remote add origin https://github.com/seungsab/test.git
 (base)
 ```
 
+## 3. .gitignore
+- ignore files and directories that are not tracked and uploaded to github
+- Create file as ".gitignore"
+```bash
+user@SSWORKSTATION MINGW64 ~/Desktop/test (master)
+$ touch .gitignore
+```
+- format for ".gitignore"
+```text
+  # ignore all .class files
+*.class
 
-## 3. Trouble shooting
+# exclude lib.class from "*.class", meaning all lib.class are still tracked
+!lib.class
+
+# ignore all json files whose name begin with 'temp-'
+temp-*.json
+
+# only ignore the build.log file in current directory, not those in its subdirectories
+/build.log
+
+# specify a folder with slash in the end
+# ignore all files in any directory named temp
+temp/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+bin/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+# /** matches 0 or more directories
+doc/**/*.pdf
+```
+
+
+## 4. Trouble shooting
 ### 1) merge  error when pulling git (git pull)
 - error: Your local changes to the following files would be overwritten by merge
 > Output
