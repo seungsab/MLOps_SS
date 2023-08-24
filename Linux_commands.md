@@ -174,7 +174,7 @@ This is work~!
 This is work~!
 ```
 
-## **12. `df`: Command to display disk filesystem information**
+## **13. `df`: Command to display disk filesystem information**
 ```bash
 (base) seungsab@SSWORKSTATION:~$ df
 Filesystem      1K-blocks       Used Available Use% Mounted on
@@ -193,4 +193,58 @@ none             26201548          0  26201548   0% /run/user
 tmpfs            26201548          0  26201548   0% /sys/fs/cgroup
 C:\             498916956  342114996 156801960  69% /mnt/c
 D:\            3907000316 3007936080 899064236  77% /mnt/d
+```
+
+## **14. `ipconfig`: Command to check ethenet (interent) information**
+To use this commmand, you should install `net-tools` first.
+If this tool is not installed yet, you can find the following scripts in the your bash-shell.
+```bash
+(base) seungsab@SSWORKSTATION:~$ ifconfig
+
+Command 'ifconfig' not found, but can be installed with:
+
+sudo apt install net-tools
+```
+Let's install this tool now,
+```bash
+(base) seungsab@SSWORKSTATION:~$ sudo apt install net-tools
+[sudo] password for seungsab:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 103 not upgraded.
+Need to get 196 kB of archives.
+After this operation, 864 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 net-tools amd64 1.60+git20180626.aebd88e-1ubuntu1 [196 kB]
+Fetched 196 kB in 2s (119 kB/s)
+Selecting previously unselected package net-tools.
+(Reading database ... 40412 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20180626.aebd88e-1ubuntu1_amd64.deb ...
+Unpacking net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
+Setting up net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+```
+Now, it's time to check ethnet information (IP address, MAC address(a.k.a physical address and so on).  
+Among various devices, `eth0` is what we want to see!
+- IP address => inet 192.168.18.85
+- MAC address: ether 00:15:5d:0c:27:07
+```bash
+(base) seungsab@SSWORKSTATION:~$ ifconfig -a
+bond0: flags=5122<BROADCAST,MASTER,MULTICAST>  mtu 1500
+        ether 3e:4f:43:3a:65:31  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.18.85  netmask 255.255.255.240  broadcast 192.168.18.95
+        inet6 fe80::215:5dff:fe0c:2707  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:0c:27:07  txqueuelen 1000  (Ethernet)
+        RX packets 48523  bytes 6151468 (6.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 193  bytes 13326 (13.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
