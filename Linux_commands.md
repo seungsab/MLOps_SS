@@ -165,6 +165,12 @@ drwxr-xr-x  2 seungsab seungsab  4096 Jun 14 10:17 test
 -rw-r--r--  1 seungsab seungsab     0 Jun 14 10:22 test2.txt
 -rw-r--r--  1 seungsab seungsab     0 Jun 14 10:22 test3.txt
 ```
+If you want to unzip multiple files into a specific directory, then use the followings.
+```bash
+## 여러개를 하는데 원하는 폴더에 넣고 싶을 때 다음과 같이 진행하다.
+unzip '*.zip' -d <Destination>
+```
+For more details, then [click](https://data-newbie.tistory.com/118)
 
 ## **12. `grep`: Command to search for a string within an output**
 ```bash
