@@ -95,8 +95,8 @@ anaconda3  test
 ```
 If you want to delete a specific directory and its contents (files), please use the following command
 ```bash
-  rm -r dirname # Remove a non-empty directory and its content.
-  rm -rf dirname # Ignore any prompt when deleting a write-protected non-empty folder.
+  rm -r <dirname> # Remove a non-empty directory and its content.
+  rm -rf <dirname> # Ignore any prompt when deleting a write-protected non-empty folder.
 ```
 
 ## **9. `cat`: Command to display file contents on the terminal**
