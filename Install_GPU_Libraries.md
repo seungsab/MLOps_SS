@@ -107,9 +107,22 @@ All GPU device in NVIDIA has own compatibility to CUDA toolkits. Also, a certain
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\lib
-
 > Note) Root directory (`C:\Program Files\`) may be changed according to your installation. Then, just chamge this part to your own root.
-  
+9. [Check version of CUDA] Open window terminal, then enter "nvcc --version" in command line. If the output includes a right version of CUDA, then setting for CUDA-toolkit have been done!
+10. Create a new virtual environment via python or anaconda:
+```bash
+conda create -n [name of VE] python=3.x
+```
+11. After creating VE, activate the new VE via the following line,
+```bash
+conda activate [name of VE]
+``` 
+12. Install DL libraries (torch or tensorflow) by checking compatible versions of DL libraries for your cuda-toolkit.
+- [For Tensorflow](https://www.tensorflow.org/install/source_windows?hl=ko#gpu)
+- [For Pytorch](https://pytorch.org/get-started/previous-versions/)
+
+
+14. 
 
 
 
