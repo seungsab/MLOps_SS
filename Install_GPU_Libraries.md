@@ -107,7 +107,8 @@ All GPU device in NVIDIA has own compatibility to CUDA toolkits. Also, a certain
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\lib
-  Note) Root directory (`C:\Program Files\`) may be changed according to your installation. Then, just chamge this part to your own root.
+
+> Note) Root directory (`C:\Program Files\`) may be changed according to your installation. Then, just chamge this part to your own root.
   
 
 
