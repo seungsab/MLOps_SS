@@ -27,3 +27,8 @@ conda env list
 ```bash
 conda env remove -n [name of VE]
 ```
+
+## **Basic PYthon Packages**
+```bash
+pip install numpy pandas scikit-learn matplotlib seaborn scipy statsmodels
+```
