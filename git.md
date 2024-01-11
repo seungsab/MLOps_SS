@@ -120,7 +120,7 @@ doc/**/*.pdf
 
 
 ## 4. Trouble shooting
-### 1) merge  error when pulling git (git pull)
+### 1) merge error when pulling git (git pull)
 - error: Your local changes to the following files would be overwritten by merge
 > Output
 ```bash
@@ -154,6 +154,21 @@ $ git stash
 warning: in the working copy of 'Create_image_as_base64.ipynb', LF will be replaced by CRLF the next time Git touches it
 Saved working directory and index state WIP on main: ea26c98 categorical tuto added
 ```
+### 1) add error before the git commit (git add .)
+- error: '*****' does not have a commit checked out
+> Output
+```bash
+SSJin@seungsab MINGW64 ~/Desktop/Treeboosting_PLHS_Comformal (master)
+$ git add .
+warning: in the working copy of 'Example_Code/PLHS_test.ipynb', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Test.ipynb', LF will be replaced by CRLF the next time Git touches it
+error: 'Tree_PLHS_Conformal/' does not have a commit checked out
+fatal: adding files failed
+```
+> **Solution**
+  1. This is because there are more than two git folders (.git)
+  2. Remove redundant folders that may be in subfolder. If you can't see these folders (hidden folder), please check [this site](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5) to discover them.
+  3. After removing redundant folders, then try `git add .`
 
 ## Appendix
 [Writing Github README](https://medium.com/analytics-vidhya/writing-github-readme-e593f278a796)
