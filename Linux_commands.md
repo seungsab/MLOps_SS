@@ -178,11 +178,19 @@ unzip '*.zip' -d <Destination>
 For more details, then [click](https://data-newbie.tistory.com/118)
 
 ## **12. `grep`: Command to search for a string within an output**
+1) Single string
 ```bash
 (base) seungsab@SSWORKSTATION:~$ cat test.txt
 This is work~!
 (base) seungsab@SSWORKSTATION:~$ cat test.txt | grep 'This'
 This is work~!
+```
+2) Multiple strings
+```bash
+SSJin@seungsab MINGW64 ~/Desktop/Collections_for_DBSIS (main)
+$ pip list | grep -E 'umap|pacmap'
+pacmap                    0.7.1
+umap-learn                0.5.5
 ```
 
 ## **13. `df`: Command to display disk filesystem information**
