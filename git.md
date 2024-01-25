@@ -154,7 +154,7 @@ $ git stash
 warning: in the working copy of 'Create_image_as_base64.ipynb', LF will be replaced by CRLF the next time Git touches it
 Saved working directory and index state WIP on main: ea26c98 categorical tuto added
 ```
-### 1) add error before the git commit (git add .)
+### 2) add error before the git commit (git add .)
 - error: '*****' does not have a commit checked out
 > Output
 ```bash
@@ -172,3 +172,41 @@ fatal: adding files failed
 
 ## Appendix
 [Writing Github README](https://medium.com/analytics-vidhya/writing-github-readme-e593f278a796)
+
+
+### 3) push error after git add & commit (git push)
+- error: failed to push some refs to 'https://github.com/seungsab/Tree_PLHS_Conformal.git'
+> Output
+```bash
+SSJin@seungsab MINGW64 ~/Desktop/Tree_PLHS_Conformal (master)
+$ git push
+To https://github.com/seungsab/Tree_PLHS_Conformal.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/seungsab/Tree_PLHS_Conformal.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+> **Solution**
+```bash
+git push -u origin +master
+```
+
+```bash
+SSJin@seungsab MINGW64 ~/Desktop/Tree_PLHS_Conformal (master)
+$  git push -u origin +master
+Enumerating objects: 144, done.
+Counting objects: 100% (144/144), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (129/129), done.
+Writing objects: 100% (144/144), 53.51 MiB | 3.60 MiB/s, done.
+Total 144 (delta 48), reused 44 (delta 5), pack-reused 0
+remote: Resolving deltas: 100% (48/48), done.
+To https://github.com/seungsab/Tree_PLHS_Conformal.git
+ + 1d688e1...b2d7159 master -> master (forced update)
+branch 'master' set up to track 'origin/master'.
+(Tree_PLHS_Comformal)
+````
