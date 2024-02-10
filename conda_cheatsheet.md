@@ -32,3 +32,8 @@ conda env remove -n [name of VE]
 ```bash
 pip install numpy pandas scikit-learn matplotlib seaborn scipy statsmodels
 ```
+
+## **How to check library dependencies**
+```bash
+conda search --info pandas | grep -E '(^version|numpy)'
+```
