@@ -7,13 +7,21 @@ conda create -n [name of VE] python=3.6
 ```bash
 source activate [name of VE]
 ```
+## **Export dependencies of VE using `pip freeze`**
+```bash
+pip freeze > requirements.txt
+```
+## **Create VE using `pip freeze`**
+```bash
+pip install -r requirements.txt
+```
 
-## **Export dependencies of VE using yml-file**
+## **Export dependencies of VE using `yml-file`**
 ```bash
 conda env export --no-builds > environment.yml
 ```
 
-## **Create VE using yml-file**
+## **Create VE using `yml-file`**
 ```bash
 conda env create -f environment.yml
 ```
