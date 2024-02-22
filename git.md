@@ -85,7 +85,7 @@ $ git remote add origin https://github.com/seungsab/test.git
 (base)
 ```
 
-## 3. .gitignore
+## 3) .gitignore
 - ignore files and directories that are not tracked and uploaded to github
 - Create file as ".gitignore"
 ```bash
@@ -116,6 +116,39 @@ bin/*.txt
 # ignore all .pdf files in the doc/ directory and any of its subdirectories
 # /** matches 0 or more directories
 doc/**/*.pdf
+```
+
+## 4) git add .
+- add files to upload git
+
+- For uploading all files,
+```bash
+git add .
+```
+```bash
+
+- For uploading specific files,
+```bash
+git add [file 1] [file 2] [/folder]
+```
+
+## 5) git commit
+- Before uploaind files to git repository, tag some explanations (message)
+ ```bash
+git commit -m "Initialize"
+```
+
+## 6) git push
+- After commit, upload all files you alread added!
+ ```bash
+git push
+```
+
+## 7) git pull
+- Once some modifications occur and push them to `git` and you want to update your files in your local by this update,
+- The following command is all you need
+ ```bash
+git pull
 ```
 
 
@@ -210,3 +243,34 @@ To https://github.com/seungsab/Tree_PLHS_Conformal.git
 branch 'master' set up to track 'origin/master'.
 (Tree_PLHS_Comformal)
 ````
+
+## 5. Some Tips.
+## 1) Remove all history of `commit`
+- When there are lots of commit history, and you want to reset them and reinitialize it, try the following command
+
+1. Move target folder in git and Checkout git!
+```bash
+git checkout --orphan latest_branch
+```
+
+2. Add all the files
+```bash
+git add -A
+```
+3. Commit the changes
+```bash
+git commit -am "commit message"
+```
+
+4. Delete the branch
+```bash
+git branch -D master
+```
+5. Rename the current branch to master
+```bash
+git branch -m master
+```
+6. Finally, force update your repository
+```bash
+git push -f origin master
+```
