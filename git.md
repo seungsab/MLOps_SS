@@ -274,3 +274,21 @@ git branch -m master
 ```bash
 git push -f origin master
 ```
+
+## 2) Force 'git pull' to overwrite local files
+- When there are lots of commit history, and you want to reset them and reinitialize it, try the following command
+
+1. First, update all origin/<branch> refs to latest:
+```bash
+git fetch --all
+```
+
+2. Jump to the latest commit on origin/master and checkout those files:
+```bash
+git reset --hard origin/master
+```
+3. Commit the changes
+```bash
+git pull
+```
+
