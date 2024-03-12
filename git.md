@@ -187,7 +187,39 @@ $ git stash
 warning: in the working copy of 'Create_image_as_base64.ipynb', LF will be replaced by CRLF the next time Git touches it
 Saved working directory and index state WIP on main: ea26c98 categorical tuto added
 ```
-### 2) add error before the git commit (git add .)
+
+### 2) failed to push some refs to "<git website>" (git pull)
+- error: error: failed to push some refs to 'https://github.com/seungsab/Tree_PLHS_Conformal.git'
+- The conflict was caused by a mismatch between the repository and the local file. The file was deleted in the repository, but it still exists in the local file
+> Output
+```bash
+user@DESKTOP-9CD5Q7P MINGW64 ~/Desktop/Tree_PLHS_Conformal (master)
+$ git push
+To https://github.com/seungsab/Tree_PLHS_Conformal.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/seungsab/Tree_PLHS_Conformal.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+> **Solution**
+```bash
+git pull origin master --allow-unrelated-histories
+```
+> Output
+```
+$ git pull origin master --allow-unrelated-histories
+From https://github.com/seungsab/Tree_PLHS_Conformal
+ * branch            master     -> FETCH_HEAD
+Auto-merging Run_fitting_models_GP.py
+CONFLICT (add/add): Merge conflict in Run_fitting_models_GP.py
+Auto-merging config_model_fitting_GP.json
+CONFLICT (add/add): Merge conflict in config_model_fitting_GP.json
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+### 3) add error before the git commit (git add .)
 - error: '*****' does not have a commit checked out
 > Output
 ```bash
@@ -207,7 +239,7 @@ fatal: adding files failed
 [Writing Github README](https://medium.com/analytics-vidhya/writing-github-readme-e593f278a796)
 
 
-### 3) push error after git add & commit (git push)
+### 4) push error after git add & commit (git push)
 - error: failed to push some refs to 'https://github.com/seungsab/Tree_PLHS_Conformal.git'
 > Output
 ```bash
