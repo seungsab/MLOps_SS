@@ -11,10 +11,6 @@ name
 NVIDIA GeForce RTX 2080 with Max-Q Design
 ```
 
-- [CUDUA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)
-- [cuDNN Archive](https://developer.nvidia.com/rdp/cudnn-archive)
-
-
 ## **[2. How to Check CUDA Version Easily](https://varhowto.com/check-pytorch-cuda-version/)**
 
 #### **1. Method 1 — Use `nvcc` to check CUDA version for PyTorch**
@@ -100,8 +96,8 @@ All GPU device in NVIDIA has own compatibility to CUDA toolkits. Also, a certain
 - [Nvidia driver, CUDA, cuDNN, TensorFlow 버전 호환성 맞추기](https://robot9710.tistory.com/29)
 - [For Tensorflow, check CUDA & cuDNN](https://www.tensorflow.org/install/source_windows#gpu)
 - [For PyTorch, check CUDA & cuDNN](https://pytorch.org/get-started/previous-versions/)
-5. [Install CUDA X.x] Install Cuda Toolkit for your GPU[Download CUDA-toolkit](https://developer.nvidia.com/cuda-toolkit-archive)
-6. [Download Cudnn X.X] Download CuDNN for the version of Cuda toolkit[Download Cudnn](https://developer.nvidia.com/cuda-toolkit-archive)
+5. [Install CUDA X.x] Install Cuda Toolkit for your GPU [Download CUDA-toolkit](https://developer.nvidia.com/cuda-toolkit-archive)
+6. [Download Cudnn X.X] Download CuDNN for the version of Cuda toolkit [Download Cudnn](https://developer.nvidia.com/rdp/cudnn-archive) 
 7. [Copy Cudnn folders to Cuda-toolkit folder] Copy `bin`, `include` and `lib` folder in Cudnn (you downloaded), then copy these folders to overwrite them to the directory of Cuda-toolkit folder.
 8. [Add CUDA toolkit folder to Global Environment path] `System` - `Advanced Setting` - `Environment Variable` - `Path` in User variable - Add the following folders`
 - C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
